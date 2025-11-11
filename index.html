@@ -26,6 +26,32 @@
       z-index: 0;
     }
 
+    .orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin-top: -200px;
+      margin-left: -200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,255,0.25), rgba(0,0,0,0.05));
+      box-shadow: 0 0 50px 10px rgba(0,255,255,0.3), inset 0 0 50px rgba(0,255,255,0.15);
+      animation: spin 20s linear infinite, pulse 3s ease-in-out infinite;
+      z-index: 1;
+      filter: blur(0.5px);
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+      50% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+    }
+
     .content {
       position: relative;
       z-index: 2;
@@ -99,6 +125,7 @@
 </head>
 <body>
   <canvas id="waves"></canvas>
+  <div class="orb"></div>
 
   <div class="content">
     <h1>FLUXLINE</h1>
@@ -142,14 +169,6 @@
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
-
-      // Gradient background overlay
-      const gradient = ctx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width);
-      gradient.addColorStop(0, "#02121a");
-      gradient.addColorStop(1, "#000000");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
-
       for (let i = 0; i < circles.length; i++) {
         const c = circles[i];
         ctx.beginPath();
