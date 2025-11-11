@@ -30,16 +30,16 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 400px;
-      height: 400px;
-      margin-top: -200px;
-      margin-left: -200px;
+      width: 420px;
+      height: 420px;
+      margin-top: -210px;
+      margin-left: -210px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(0,255,255,0.25), rgba(0,0,0,0.05));
-      box-shadow: 0 0 50px 10px rgba(0,255,255,0.3), inset 0 0 50px rgba(0,255,255,0.15);
-      animation: spin 20s linear infinite, pulse 3s ease-in-out infinite;
+      box-shadow: 0 0 60px 15px rgba(0,255,255,0.3), inset 0 0 60px rgba(0,255,255,0.15);
+      animation: spin 25s linear infinite, pulse 3s ease-in-out infinite;
       z-index: 1;
-      filter: blur(0.5px);
+      filter: blur(1px);
     }
 
     @keyframes spin {
@@ -56,7 +56,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      top: 12%;
+      top: 20%;
     }
 
     h1 {
@@ -76,16 +76,45 @@
     }
 
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #9ad5ff;
       font-weight: 400;
       letter-spacing: 1px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
+    }
+
+    .ca-box {
+      font-family: monospace;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.2);
+      border-radius: 10px;
+      padding: 12px 28px;
+      color: #00ffff;
+      font-size: 0.95rem;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      width: fit-content;
+      margin: 0 auto 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffff, #4b00ff);
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 12px 34px;
+      border-radius: 30px;
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0,255,255,0.5);
     }
 
     .ticker-container {
       position: absolute;
-      top: 55%;
       width: 100%;
       overflow: hidden;
       z-index: 2;
@@ -94,21 +123,21 @@
     .ticker {
       display: flex;
       gap: 40px;
-      animation: scroll 40s linear infinite;
+      animation: scroll 30s linear infinite;
     }
 
     .ticker.reverse {
-      animation: scrollReverse 55s linear infinite;
+      animation: scrollReverse 36s linear infinite;
     }
 
     @keyframes scroll {
       from { transform: translateX(100%); }
-      to { transform: translateX(-150%); }
+      to { transform: translateX(-180%); }
     }
 
     @keyframes scrollReverse {
       from { transform: translateX(-100%); }
-      to { transform: translateX(150%); }
+      to { transform: translateX(180%); }
     }
 
     .block {
@@ -123,40 +152,6 @@
       line-height: 1.6;
       backdrop-filter: blur(5px);
     }
-
-    .ca-box {
-      font-family: monospace;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(0,255,255,0.2);
-      border-radius: 10px;
-      padding: 12px 28px;
-      color: #00ffff;
-      font-size: 0.95rem;
-      box-shadow: 0 0 20px rgba(0,255,255,0.2);
-      width: fit-content;
-      margin: 60px auto 20px;
-      z-index: 3;
-      position: relative;
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg, #00ffff, #4b00ff);
-      color: #000;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 34px;
-      border-radius: 30px;
-      box-shadow: 0 0 25px rgba(0,255,255,0.3);
-      transition: all 0.3s ease;
-      z-index: 3;
-      position: relative;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(0,255,255,0.5);
-    }
   </style>
 </head>
 <body>
@@ -166,34 +161,51 @@
   <div class="content">
     <h1>FLUXLINE</h1>
     <h2>The Hidden Liquidity Layer</h2>
+    <div class="ca-box">CA: WILL BE ADDED SOON</div>
+    <a href="https://x.com/i/communities/1988030401877541331" target="_blank" class="btn">Join X Community</a>
   </div>
 
   <!-- Первый поток -->
-  <div class="ticker-container" style="top: 60%;">
+  <div class="ticker-container" style="top: 63%;">
     <div class="ticker">
-      <div class="block">Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. By scanning every DEX, bridge, and wallet pulse, it reads the market’s bloodstream before a single candle moves.</div>
-      <div class="block">Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. By scanning every DEX, bridge, and wallet pulse, it reads the market’s bloodstream before a single candle moves.</div>
+      <div class="block">
+        Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. 
+        It reads the bloodstream of Solana before the market ever notices the pulse.
+      </div>
+      <div class="block">
+        Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. 
+        It reads the bloodstream of Solana before the market ever notices the pulse.
+      </div>
     </div>
   </div>
 
   <!-- Второй поток -->
-  <div class="ticker-container" style="top: 68%;">
+  <div class="ticker-container" style="top: 71%;">
     <div class="ticker reverse">
-      <div class="block">Every transfer is a whisper, every bridge a heartbeat. FLUXLINE turns this noise into clarity — mapping invisible capital migrations and early accumulation signals across Solana’s deep ocean.</div>
-      <div class="block">Every transfer is a whisper, every bridge a heartbeat. FLUXLINE turns this noise into clarity — mapping invisible capital migrations and early accumulation signals across Solana’s deep ocean.</div>
+      <div class="block">
+        Every transfer is a whisper, every bridge a heartbeat. FLUXLINE listens beneath the noise — 
+        detecting capital migrations and early accumulation waves long before they reach the surface.
+      </div>
+      <div class="block">
+        Every transfer is a whisper, every bridge a heartbeat. FLUXLINE listens beneath the noise — 
+        detecting capital migrations and early accumulation waves long before they reach the surface.
+      </div>
     </div>
   </div>
 
   <!-- Третий поток -->
-  <div class="ticker-container" style="top: 76%;">
+  <div class="ticker-container" style="top: 79%;">
     <div class="ticker">
-      <div class="block">Liquidity doesn’t sleep. It shifts — quietly. And we follow the current.</div>
-      <div class="block">Liquidity doesn’t sleep. It shifts — quietly. And we follow the current.</div>
+      <div class="block">
+        Liquidity doesn’t sleep. It flows, shifts, and hides in patterns too small to see. 
+        FLUXLINE captures that hidden current — and translates silence into signal.
+      </div>
+      <div class="block">
+        Liquidity doesn’t sleep. It flows, shifts, and hides in patterns too small to see. 
+        FLUXLINE captures that hidden current — and translates silence into signal.
+      </div>
     </div>
   </div>
-
-  <div class="ca-box">CA: WILL BE ADDED SOON</div>
-  <a href="https://x.com/i/communities/1988030401877541331" target="_blank" class="btn">Join X Community</a>
 
   <script>
     const canvas = document.getElementById("waves");
@@ -224,10 +236,10 @@
         ctx.beginPath();
         ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(0, 255, 255, ${c.opacity})`;
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 1.2;
         ctx.stroke();
-        c.radius += 1.5;
-        c.opacity -= 0.005;
+        c.radius += 1.4;
+        c.opacity -= 0.006;
         if (c.opacity <= 0) circles.splice(i, 1);
       }
       requestAnimationFrame(draw);
