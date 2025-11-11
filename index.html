@@ -56,12 +56,11 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 12%;
     }
 
     h1 {
-      font-size: 4.5rem;
+      font-size: 4rem;
       letter-spacing: 4px;
       background: linear-gradient(90deg, #00ffff, #4b00ff);
       -webkit-background-clip: text;
@@ -77,19 +76,52 @@
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: #9ad5ff;
       font-weight: 400;
       letter-spacing: 1px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
-    .paragraph {
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.7;
-      font-size: 1.05rem;
-      color: #c5e4ff;
+    .ticker-container {
+      position: absolute;
+      top: 55%;
+      width: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 40px;
+      animation: scroll 40s linear infinite;
+    }
+
+    .ticker.reverse {
+      animation: scrollReverse 55s linear infinite;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-150%); }
+    }
+
+    @keyframes scrollReverse {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(150%); }
+    }
+
+    .block {
+      min-width: 600px;
+      background: rgba(0,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.2);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(0,255,255,0.15);
+      color: #b8f5ff;
+      font-size: 1rem;
+      line-height: 1.6;
+      backdrop-filter: blur(5px);
     }
 
     .ca-box {
@@ -102,7 +134,9 @@
       font-size: 0.95rem;
       box-shadow: 0 0 20px rgba(0,255,255,0.2);
       width: fit-content;
-      margin: 40px auto 20px;
+      margin: 60px auto 20px;
+      z-index: 3;
+      position: relative;
     }
 
     .btn {
@@ -115,6 +149,8 @@
       border-radius: 30px;
       box-shadow: 0 0 25px rgba(0,255,255,0.3);
       transition: all 0.3s ease;
+      z-index: 3;
+      position: relative;
     }
 
     .btn:hover {
@@ -130,20 +166,34 @@
   <div class="content">
     <h1>FLUXLINE</h1>
     <h2>The Hidden Liquidity Layer</h2>
-
-    <div class="paragraph">
-      <p>Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. 
-      By scanning every DEX, bridge, and wallet pulse, it reads the market’s bloodstream before a single candle moves.</p>
-
-      <p>Every transfer is a whisper, every bridge a heartbeat. FLUXLINE turns this noise into clarity — 
-      mapping invisible capital migrations and early accumulation signals across Solana’s deep ocean.</p>
-
-      <p>Liquidity doesn’t sleep. It shifts — quietly. And we follow the current.</p>
-    </div>
-
-    <div class="ca-box">CA: WILL BE ADDED SOON</div>
-    <a href="https://x.com/i/communities/1988030401877541331" target="_blank" class="btn">Join X Community</a>
   </div>
+
+  <!-- Первый поток -->
+  <div class="ticker-container" style="top: 60%;">
+    <div class="ticker">
+      <div class="block">Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. By scanning every DEX, bridge, and wallet pulse, it reads the market’s bloodstream before a single candle moves.</div>
+      <div class="block">Before the move, there’s a flow. FLUXLINE tracks liquidity where it starts — not where it ends. By scanning every DEX, bridge, and wallet pulse, it reads the market’s bloodstream before a single candle moves.</div>
+    </div>
+  </div>
+
+  <!-- Второй поток -->
+  <div class="ticker-container" style="top: 68%;">
+    <div class="ticker reverse">
+      <div class="block">Every transfer is a whisper, every bridge a heartbeat. FLUXLINE turns this noise into clarity — mapping invisible capital migrations and early accumulation signals across Solana’s deep ocean.</div>
+      <div class="block">Every transfer is a whisper, every bridge a heartbeat. FLUXLINE turns this noise into clarity — mapping invisible capital migrations and early accumulation signals across Solana’s deep ocean.</div>
+    </div>
+  </div>
+
+  <!-- Третий поток -->
+  <div class="ticker-container" style="top: 76%;">
+    <div class="ticker">
+      <div class="block">Liquidity doesn’t sleep. It shifts — quietly. And we follow the current.</div>
+      <div class="block">Liquidity doesn’t sleep. It shifts — quietly. And we follow the current.</div>
+    </div>
+  </div>
+
+  <div class="ca-box">CA: WILL BE ADDED SOON</div>
+  <a href="https://x.com/i/communities/1988030401877541331" target="_blank" class="btn">Join X Community</a>
 
   <script>
     const canvas = document.getElementById("waves");
